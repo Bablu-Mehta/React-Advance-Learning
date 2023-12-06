@@ -5,10 +5,10 @@ import "./index.css";
 import Log from "./components/Log";
 import { WINNING_COMBINATIONS } from './winning-combinations'
 
-const WINNING_COMBINATION = [
-  [
-    { row: 0, col: 0 },
-  ]
+const initialGameBoard = [
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
 ];
 
 function derivedActivePlayer(gameTurns){
@@ -29,6 +29,23 @@ function App() {
 
 const activePlayer = derivedActivePlayer(gameTurns);
 
+let gameBoard = initialGameBoard;
+
+for(const turn of gameTurns)
+{
+  const {square, player} = turn;
+  const { row, col } = square;
+
+  gameBoard[row][col] = player;
+}
+
+  for(combination of WINNING_COMBINATIONS)
+  {
+    const firstSquareSymbol = gameBoard[]
+    const secondSquareSymbol
+    const thirdSquareSymbol
+  }
+
   function handleSelectSquare(rowIndex, colIndex) {
 
     //setActivePlayer((curActivePlayer) => curActivePlayer ==='X' ? 'O' : 'X');
@@ -46,7 +63,7 @@ const activePlayer = derivedActivePlayer(gameTurns);
           <Player initialName="Player-1" symbol="X" isActive={activePlayer === 'X'} />
           <Player initialName="Player-2" symbol="O" isActive={activePlayer === 'O'} />
         </ol>
-        <GameBoard onSelectSquare={handleSelectSquare} turns={gameTurns} />
+        <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
       </div>
       <Log turns={gameTurns} />
     </main>
