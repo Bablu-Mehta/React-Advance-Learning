@@ -3,6 +3,13 @@ import GameBoard from "./components/GameBoard";
 import Player from "./components/Player";
 import "./index.css";
 import Log from "./components/Log";
+import { WINNING_COMBINATIONS } from './winning-combinations'
+
+const WINNING_COMBINATION = [
+  [
+    { row: 0, col: 0 },
+  ]
+];
 
 function derivedActivePlayer(gameTurns){
   
