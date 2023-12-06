@@ -54,7 +54,7 @@ for(const turn of gameTurns)
     console.log(firstSquareSymbol);
    // console.log(winner);
     if(firstSquareSymbol && firstSquareSymbol === secondSquareSymbol && firstSquareSymbol === thirdSquareSymbol){
-      winner = firstSquareSymbol;
+      winner = players[firstSquareSymbol];
     }
    // console.log(winner);
   }
@@ -88,8 +88,8 @@ for(const turn of gameTurns)
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player initialName="Player-1" symbol="X" isActive={activePlayer === 'X'} />
-          <Player initialName="Player-2" symbol="O" isActive={activePlayer === 'O'} />
+          <Player initialName="Player-1" symbol="X" isActive={activePlayer === 'X'} onChangeName={handlePlayerNameChange} />
+          <Player initialName="Player-2" symbol="O" isActive={activePlayer === 'O'} onChangeName={handlePlayerNameChange} />
         </ol>
         {(winner || hasDraw) && <GameOver winner={winner} onRestart={handleRestart} />}
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
