@@ -10,7 +10,7 @@ export default function TimerChallenger({ title, targetTime }){
     function handleStart(){
         timer.current = setTimeout(() =>{
             setTimerExpired(true);
-            dialog.current.showModal();
+            dialog.current.open();
         }, targetTime * 1000);
         setTimerStarted(true);
         
@@ -19,7 +19,7 @@ export default function TimerChallenger({ title, targetTime }){
     function handleStop(){
         clearTimeout(timer.current);
     }
-    
+
     return(
         <>
         <ResultModal ref={dialog} targetTime={targetTime} result="lost" />
