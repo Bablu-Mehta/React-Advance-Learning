@@ -1,11 +1,12 @@
 import NewPorject from './components/NewProject';
-import ProjectsSidebar from './components/ProjectsSidebar'
+import ProjectsSidebar from './components/ProjectsSidebar.jsx';
+import NoProjectSelected from './components/NoProjectSelected.jsx'
 
 function App() {
   return (
     <main className="h-screen my-8 flex gap-8">
       <ProjectsSidebar />
-      <NewPorject />
+      <NoProjectSelected />
     </main>
   );
 }
