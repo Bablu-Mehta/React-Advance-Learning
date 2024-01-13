@@ -23,6 +23,8 @@ export default function Cart() {
     userProgressCtx.showCheckout();
   }
 
+ 
+
   return (
     <Modal
       className="cart"
